@@ -4,6 +4,8 @@ let check = 0
 let myLibrary = []
 
 
+
+
 //The class for the Book objects
 class Book {
     constructor(title, author, readStatus, pages) {
@@ -86,6 +88,8 @@ function bookAdd(title, author, readStatus, pages) {
 
 function showForm() {
     document.getElementById("form").classList.add("show")
+    document.getElementById("pop").classList.add("show")
+    window.addEventListener("click", windowOnClick);
 
 }
 
@@ -128,10 +132,23 @@ function addForm() {
 
 
     document.getElementById("form").classList.remove("show")
+    document.getElementById("pop").classList.remove("show")
 
 
 
 }
+
+
+function windowOnClick(e) {
+
+        if (e.target === document.getElementById("pop") ) {
+            document.getElementById("form").classList.remove("show")
+            document.getElementById("pop").classList.remove("show")
+        }
+    }
+    
+
+
 
 
 
