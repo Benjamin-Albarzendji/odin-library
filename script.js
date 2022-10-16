@@ -124,7 +124,9 @@ function addForm() {
         read = "Not Read"
     }
 
-    bookAdd(title.value, author.value, read, pages.value)
+    const newBook = new Book(title.value, author.value, read, pages.value)
+    myLibrary.push(newBook)
+    pullInformation()
     title.value = ""
     author.value = ""
     pages.value = ""
@@ -141,12 +143,12 @@ function addForm() {
 
 function windowOnClick(e) {
 
-        if (e.target === document.getElementById("pop") ) {
-            document.getElementById("form").classList.remove("show")
-            document.getElementById("pop").classList.remove("show")
-        }
+    if (e.target === document.getElementById("pop")) {
+        document.getElementById("form").classList.remove("show")
+        document.getElementById("pop").classList.remove("show")
     }
-    
+}
+
 
 
 
