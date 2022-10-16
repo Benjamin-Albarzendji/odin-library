@@ -15,8 +15,8 @@ class Book {
 }
 
 //Placeholder books
-const gameOfThrones = new Book("A Game of Thrones", "George R.R Martin", "Yes", "720")
-const hyperion = new Book("Hyperion", "Dan Simmons", "Yes", "482")
+const gameOfThrones = new Book("A Game of Thrones", "George R.R Martin", "Book Read", "720")
+const hyperion = new Book("Hyperion", "Dan Simmons", "Book Read", "482")
 
 
 //Pushing the books to the library
@@ -86,22 +86,50 @@ function bookAdd(title, author, readStatus, pages) {
 
 function showForm() {
     document.getElementById("form").classList.add("show")
-    document.getElementById("form").addEventListener("click", function (event) {
-        event.preventDefault()
-    });
 
 }
 
 function addForm() {
 
+    document.getElementById("form").addEventListener("click", function (event) {
+        event.preventDefault()
+    });
 
     const form = document.getElementById("form")
+    const title = document.querySelector("#title")
+    const author = document.querySelector("#author")
+    const pages = document.querySelector("#pages")
+    let read = document.querySelector("#read")
 
-    title = document.querySelector("#title")
+    if (title.value === "") {
+        return
+    }
+    else if (author.value === "") {
+        return
+    }
 
-    console.log(title.value)
-        
-        title.value = wow
+    else if (pages.value === "") {
+        return
+    }
+
+
+    if (read.checked === true) {
+        read = "Book Read"
+    }
+    else {
+        read = "Not Read"
+    }
+
+    bookAdd(title.value, author.value, read, pages.value)
+    title.value = ""
+    author.value = ""
+    pages.value = ""
+
+
+
+    document.getElementById("form").classList.remove("show")
+
+
 
 }
 

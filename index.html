@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="header">
+      <div class="text">library</div>
+    </div>
+    <div class="buttonContainer">
+      <button onclick="showForm()">+ Add Book</button>
+    </div>
 
+    <div class="cardsContainer"></div>
 
-<div class="header">
-    <div class="text">
-    library
-</div>
-</div>
-<div class="buttonContainer">
+    <div class="popupContact">
+      <form action="/" id="form" name="form" class="form">
+        <h4>Add Book</h4>
+        <input
+          id="title"
+          name="title"
+          placeholder="Title"
+          type="text"
+          required
+        />
+        <input
+          id="author"
+          name="author"
+          placeholder="Author"
+          type="text"
+          required
+        />
+        <input
+          id="pages"
+          name="pages"
+          placeholder="Pages"
+          type="text"
+          inputmode="numeric"
+          required
+        />
+        <div>
+          <label for="read">Have you read it?</label>
+          <input type="checkbox" id="read" name="read" value="Yes" />
+        </div>
 
-    <button onclick="showForm()" >+ Add Book</button>
-</div>
-
-<div class="cardsContainer"></div>
-    
-
-<div class="popupContact">
-
-<form id="form" name="form" class="form" ">
-
-<h4>Add Book</h4>
-<input id="title" name="title" placeholder="Title" type="text" required>
-<input id="author" name="author" placeholder="Author" type="text" required>
-<input id="pages" name="pages" placeholder="Pages" type="text" inputmode="numeric" required>
-<div><label for="read">Have you read it?</label>
-<input type="checkbox" id="read" name="read" value="Yes">
-
-</div>
-
-<button onclick="addForm()">Add</button>
- 
-</form>
-
-</div>
-
-    
-
-</body>
+        <button onclick="addForm()">Add</button>
+      </form>
+    </div>
+  </body>
 </html>
