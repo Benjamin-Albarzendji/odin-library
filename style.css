@@ -64,6 +64,7 @@ button:hover {
   margin-bottom: 5%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 1s;
 }
 
 .cardsContainer .card > :first-child {
@@ -73,12 +74,14 @@ button:hover {
 
 .popupContact {
   visibility: hidden;
+  opacity: 0;
   display: flex;
   justify-content: center;
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.4s;
 }
 
 .form {
@@ -88,18 +91,21 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 200px;
-  height: 250px;
+  width: 250px;
+  height: 350px;
   gap: 10px;
   flex-wrap: wrap;
   font-size: 1rem;
   background-color: #f0eef1;
   border-radius: 10px;
   color: black;
+  transition: 0.4s;
+  transform: scale(0.1);
 }
 
 .show {
   visibility: visible;
+opacity: 1;
   transform: scale(1.2);
   transition: 0.5s;
 }
@@ -118,21 +124,45 @@ button:hover {
   border: 2px rgb(74, 217, 119);
 }
 
+form input {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 button:hover {
   border: 2px rgba(74, 217, 119, 0.663);
   background-color: rgba(74, 217, 119, 0.663);
 }
 
 .card button {
+  opacity: 0;
   border-radius: 10px;
   width: 30%;
   padding: 10px;
   font-size: 0.8rem;
   background-color: rgb(217, 74, 74);
   border: 2px rgb(217, 74, 74);
+  transition: 1s;
 }
 
 .card button:hover {
   border: 2px rgba(217, 74, 74, 0.453);
   background-color: rgba(217, 74, 74, 0.453);
+}
+.card:hover button {
+  opacity: 1;
+  transition: 1s;
+}
+
+.card:hover {
+  border: rgb(109, 109, 230) solid 3px;
+  transform: scale(1.05);
+  transition: 1s;
+}
+
+button {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
