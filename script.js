@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-use-before-define */
 let check = 0;
 
-//The Library for the books
-let myLibrary = [];
+// The Library for the books
+const myLibrary = [];
 
-//The class for the Book objects
+// The class for the Book objects
 class Book {
   constructor(title, author, readStatus, pages) {
     this.title = title;
@@ -13,7 +15,7 @@ class Book {
   }
 }
 
-//Placeholder books
+// Placeholder books
 const gameOfThrones = new Book(
   "A Game of Thrones",
   "George R.R Martin",
@@ -22,7 +24,7 @@ const gameOfThrones = new Book(
 );
 const hyperion = new Book("Hyperion", "Dan Simmons", "Book Read", "482");
 
-//Pushing the books to the library
+// Pushing the books to the library
 myLibrary.push(gameOfThrones);
 myLibrary.push(hyperion);
 
@@ -30,17 +32,17 @@ pullInformation();
 pullInformation();
 
 function pullInformation() {
-  let title = myLibrary[check].title;
-  let author = myLibrary[check].author;
-  let readStatus = myLibrary[check].readStatus;
-  let pages = myLibrary[check].pages;
+  const {title} = myLibrary[check];
+  const {author} = myLibrary[check];
+  const {readStatus} = myLibrary[check];
+  const {pages} = myLibrary[check];
 
   bookAdd(title, author, readStatus, pages);
 }
 
 function bookAdd(title, author, readStatus, pages) {
-  //Creates the book structure
-  let book = document.createElement("div");
+  // Creates the book structure
+  const book = document.createElement("div");
   book.className = "card";
   book.dataset.id = check;
   const titleDiv = document.createElement("div");
@@ -49,33 +51,33 @@ function bookAdd(title, author, readStatus, pages) {
   const pagesDiv = document.createElement("div");
   const button = document.createElement("button");
 
-  //Appends Children to main div
+  // Appends Children to main div
   book.appendChild(titleDiv);
   book.appendChild(authorDiv);
   book.appendChild(readDiv);
   book.appendChild(pagesDiv);
   book.appendChild(button);
 
-  //Information provided
+  // Information provided
   titleDiv.innerText = `${title}`;
   authorDiv.innerText = `${author}`;
   readDiv.innerText = `${readStatus}`;
   pagesDiv.innerText = `${pages} pages`;
   button.innerText = "Delete";
 
-  //Eventlistener for button
+  // Eventlistener for button
   button.addEventListener("click", (e) => {
-    //Gets the data-id from the parent, removes it from the website and removes it from the array
+    // Gets the data-id from the parent, removes it from the website and removes it from the array
     const parent = e.target.parentNode;
-    console.log((indexPosition = parent.getAttribute("data-id")));
+    const indexPosition = parent.getAttribute("data-id");
     myLibrary.splice(indexPosition, 1);
     parent.remove();
   });
 
-  //Global index value that gets incremeneted wth every book
+  // Global index value that gets incremeneted wth every book
   check += 1;
-  //Adds it to the cardContainer structure
-  let cardContainer = document.querySelector(".cardsContainer");
+  // Adds it to the cardContainer structure
+  const cardContainer = document.querySelector(".cardsContainer");
   cardContainer.appendChild(book);
 }
 
@@ -86,7 +88,7 @@ function showForm() {
 }
 
 function addForm() {
-  document.getElementById("form").addEventListener("click", function (event) {
+  document.getElementById("form").addEventListener("click", (event) => {
     event.preventDefault();
   });
 
@@ -98,9 +100,9 @@ function addForm() {
 
   if (title.value === "") {
     return;
-  } else if (author.value === "") {
+  } if (author.value === "") {
     return;
-  } else if (pages.value === "") {
+  } if (pages.value === "") {
     return;
   }
 
