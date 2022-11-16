@@ -169,3 +169,15 @@ button {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.form input:not(:focus):not(:placeholder-shown):invalid {
+  border: solid red;
+}
+
+.form input:not(:focus):not(:placeholder-shown):valid {
+  border: solid rgb(45, 225, 0);
+}
+.form label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  margin-bottom: 2%;
+}

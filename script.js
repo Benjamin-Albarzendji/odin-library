@@ -87,18 +87,20 @@ function showForm() {
   window.addEventListener("click", windowOnClick);
 }
 
+
 function addForm() {
-  document.getElementById("form").addEventListener("click", (event) => {
+  document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault();
   });
 
   const form = document.getElementById("form");
-  const title = document.querySelector("#title");
-  const author = document.querySelector("#author");
-  const pages = document.querySelector("#pages");
-  let read = document.querySelector("#read");
+  const title = document.getElementById("title");
+  const author = document.getElementById("author");
+  const pages = document.getElementById("pages");
+  let read = document.getElementById("read");
 
-  if (title.value === "") {
+  if (title.validity.tooShort) {
+    
     return;
   } if (author.value === "") {
     return;
